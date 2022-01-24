@@ -1,12 +1,11 @@
-import logo from './logo.svg';
 import './App.css';
+import ResponsiveAppBar from './NavbarComponents/Navbar';
 
 function App() {
   return (
-    <div>
-      Hola, esto es un test
-    </div>
+    <ResponsiveAppBar />
   );
 }
 
 export default App;
+
