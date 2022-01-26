@@ -1,3 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+}
 .AppBar{
     background-color: mediumpurple !important;
+
+}
+.landingTitle {
+    width: 100%;
+    height: 100px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin: 1em 0;
+    font-family: 'Staatliches', cursive;
+    letter-spacing: .2em;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffbbbb;
+    text-shadow: 2px 2px 1px #b68ec9;
+}
+
+.ContainerProductList{
+    display: flex;
+    justify-content: flex-end;
+    margin: 100px;
+    width: 100%;
 }

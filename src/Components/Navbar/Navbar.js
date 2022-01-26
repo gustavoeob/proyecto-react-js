@@ -9,8 +9,9 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import Logo from './Img/whoopie.png'
 
-const pages = ['Products', 'About Us', 'Help'];
+const pages = ['Products', 'About Us', 'Help', '🛒'];
 
 const ResponsiveAppBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -38,7 +39,7 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex'}}}>
           <a href="index.html">
-          <img src="whoopie.png" alt="" width="55px" height="55px" padding="200px"/>
+          <img src={Logo} alt="" width="55px" height="55px" padding="200px"/>
           </a>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -83,7 +84,9 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}
           >
-          <img src="whoopie.png" alt="" width="55px" height="55px" padding="0 250px"/>
+            <a href='index.html'>
+              <img src={Logo} alt="" width="55px" height="55px" padding="0 250px"/>  
+            </a>
             
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
