@@ -9,6 +9,8 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Container from '@mui/material/Container';
 import Button from '@mui/material/Button';
 import MenuItem from '@mui/material/MenuItem';
+import Logo from './NavbarAssets/img/whoopie.png'
+import CartIcon from './NavbarComponents/CartIcon'
 
 const pages = ['Products', 'About Us', 'Help'];
 
@@ -28,6 +30,7 @@ const ResponsiveAppBar = () => {
     setAnchorElUser(null);
   };
 
+  
   return (
     <AppBar position="static" className="AppBar">
       <Container maxWidth="xl">
@@ -37,8 +40,9 @@ const ResponsiveAppBar = () => {
             noWrap
             component="div"
             sx={{ mr: 2, display: { xs: 'none', md: 'flex'}}}>
+              {/* Desktop Logo */}
           <a href="index.html">
-          <img src="whoopie.png" alt="" width="55px" height="55px" padding="200px"/>
+          <img src={Logo} alt="" width="55px" height="55px" padding="200px"/>
           </a>
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
@@ -83,7 +87,10 @@ const ResponsiveAppBar = () => {
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' }}}
           >
-          <img src="whoopie.png" alt="" width="55px" height="55px" padding="0 250px"/>
+            {/* Mobile Logo */}
+          <a href="index.html">
+            <img src={Logo} alt="" width="55px" height="55px" padding="0 250px"/>
+          </a>
             
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
@@ -116,7 +123,7 @@ const ResponsiveAppBar = () => {
               open={Boolean(anchorElUser)}
               onClose={handleCloseUserMenu}
             >
-            
+             <CartIcon />
             </Menu>
           </Box>
         </Toolbar>
