@@ -9,7 +9,7 @@
 }
 .landingTitle {
     width: 100%;
-    height: 100px;
+    height: 150px;
     align-items: center;
     display: flex;
     justify-content: center;
@@ -22,9 +22,16 @@
     text-shadow: 2px 2px 1px #b68ec9;
 }
 
-.ContainerProductList{
-    display: flex;
-    justify-content: flex-end;
-    margin: 100px;
+
+.Product{
     width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 2em 0;
+    font-weight: bold;
+}
+
+.item-list{
+    color: mediumpurple;
+    padding: 12px ;
 }
