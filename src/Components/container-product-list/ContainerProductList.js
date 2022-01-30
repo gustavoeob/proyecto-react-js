@@ -7,7 +7,9 @@ const products = [
   { id: "3", name: "Carrot Cake", price: "2.59", stock: "11" },
   { id: "4", name: "Oreo Cinnamon Roll", price: "2.99", stock: "5" },
   { id: "5", name: "Coke Can", price: "2.49", stock: "55" },
-  { id: "6", name: "Bottle of Water", price: "1.99", stock: "22"}
+  { id: "6", name: "Bottle of Water", price: "1.99", stock: "22"},
+  { id: "6", name: "Cappuccino", price: "4.19", stock: "100"},
+  { id: "6", name: "Macchiato", price: "3.99", stock: "89"}
 ];
 
 const ContainerProductList = () => {
