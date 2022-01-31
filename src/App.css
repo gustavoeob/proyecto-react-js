@@ -1,8 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;600;700;800&display=swap');
 *{
     margin: 0;
     padding: 0;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 700;
+}
+#App{
+    max-width: 100%;
+
 }
 .AppBar{
     background-color: mediumpurple !important;
@@ -16,12 +22,10 @@
 }
 
 .landingTitle {
-    width: 100%;
-    height: 150px;
+    margin: 1.2em;
     align-items: center;
     display: flex;
     justify-content: center;
-    
     font-family: 'Yellowtail', cursive;
     letter-spacing: .085em;
     font-size: 2.4em;
@@ -29,21 +33,32 @@
     text-shadow: 2px 2px 1px #b68ec9;
 }
 
+.itemContainer{
+    display: flex;
+    margin: 1em 1.2em;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
 
 .Product{
-    width: 100%;
+    width: 320px;
+    height: 400px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
-    margin: 1.2em 0;
+    margin: 1.5em 2.5em;
     font-weight: bold;
+    border: 2px dashed mediumpurple;
+    border-radius: 3px;
 }
 
 .item-list{
     color: mediumpurple;
-    padding: 12px;
+    text-align: center;
+    
 }
 .product-count{
-    padding: 0 50px;
+    text-align: center;
 }
 .decrease, .increase{
     margin: 10.5px 3px;
