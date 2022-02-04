@@ -6,12 +6,11 @@ import React, {useEffect} from 'react';
 let setCount;
 
 const App = () => {
-  useEffect(() =>{
-    const timer = setTimeout(() =>{
-      setCount('fvsc')
-    }, 2000);
+  useEffect(() => {
+    const timer = setTimeout(() => console.log("Hello, World!"), 3000);
     return () => clearTimeout(timer);
   }, []);
+
   return ( 
     <div id="App">
       <ResponsiveAppBar />
