@@ -6,7 +6,6 @@ import { productsAPI } from "../helpers/promises";
 
 
 
-
 const ItemListContainer = () => {
   
   const [products, setProducts] = useState([]);
@@ -40,14 +39,15 @@ const ItemListContainer = () => {
       <h1 className="app-title">Whoopie.co</h1>
       <p className="landingTitle">The products you love are here!</p>
       <div className="itemContainer">  
-      <div>
+      <div className="product">
         <h1>Product you clicked</h1>
         <p>{selectedItem ? selectedItem.name : "Click to see a product here"}</p>
         <p>{selectedItem ? selectedItem.price : "Ninguno"}</p>
         <p>{selectedItem ? selectedItem.id : "Ninguno"}</p>
+        <p>{selectedItem ? selectedItem.image : "Ninguno"}</p>
       </div>
       {Items.map(({ id, name, price, stock, image}) => (
-        <Item key={id} id={id} name={name} price={price} stock={stock} image={image} setSelectedItem={setSelectedItem}/>
+        <Item key={id} id={id} name={name} price={`$${price}`} stock={stock} image={image} setSelectedItem={setSelectedItem}/>
         ))}
       </div>
     </div>
