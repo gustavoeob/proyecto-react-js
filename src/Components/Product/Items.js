@@ -1,4 +1,4 @@
-export const data = [
+export const Items = [
     { id: "1", alt: "lemon-pie", name: "Lemon Pie", price: "3.50", stock: "16", description: "", image:"https://olo-images-live.imgix.net/9d/9d0118902054422d9468edacd5f70458.jpg?auto=format%2Ccompress&q=60&cs=tinysrgb&w=1200&h=800&fit=fill&fm=png32&bg=transparent&s=6d3389ff1d96ca8815c2e27b990a9dd0"},
     { id: "2", alt: "cheesecake-original", name: "Cheesecake Original", price: "4.49", stock: "8", description: "", image:"https://olo-images-live.imgix.net/90/90e476ce76674d26bbda7d92729c5996.jpg?auto=format%2Ccompress&q=60&cs=tinysrgb&w=1200&h=800&fit=fill&fm=png32&bg=transparent&s=18df93ace785912247eb2557f3412f77"},
     { id: "3", alt: "carrot-cake", name: "Carrot Cake", price: "2.59", stock: "11", description: "", image:"https://olo-images-live.imgix.net/2a/2a09b23db4434f059fc8725096da4117.jpg?auto=format%2Ccompress&q=60&cs=tinysrgb&w=1200&h=800&fit=fill&fm=png32&bg=transparent&s=ec1a7714e27196d017546f21941dd0e5"},

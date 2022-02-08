@@ -1,7 +1,7 @@
 import React from 'react';
 import {useEffect, useState} from 'react';
 import { productsAPI } from '../helpers/promises';
-import { data } from '../Product/data';
+import { Items } from '../Product/Items';
 import Item from '../Product/Item'
 
 
@@ -27,15 +27,14 @@ const ItemDetailContainer = () => {
     <div>
         <h1>Lista de productos</h1>
         <h3>Producto seleccionado</h3>
-            {selectedItem && selectedItem.image && (
+            selectedItem && selectedItem.image 
                 <img src={selectedItem.image} alt="selectedItemImage" />
-            )}
         <p>{selectedItem && selectedItem.name}</p>
         <p>{selectedItem && selectedItem.description}</p>
         <p>ID: {selectedItem && selectedItem.id}</p>
         <p>Stock seleccionado: {selectedItem && selectedItem.stock}</p>
         <hr />
-            {data.map(({ id, name, image }) => (
+            {Items.map(({ id, name, image }) => (
                 <Item
                 key={id}
                 id={id}

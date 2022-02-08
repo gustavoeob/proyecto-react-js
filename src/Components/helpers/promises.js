@@ -1,4 +1,4 @@
-import {data} from '../Product/data';
+import {Items} from '../Product/Items';
 
 
 export const task = new Promise((resolve, reject) => {
@@ -7,6 +7,6 @@ export const task = new Promise((resolve, reject) => {
 
 export const productsAPI = new Promise((resolve, reject) => {
   setTimeout(() => {
-    resolve(data);
-  }, 500);
+    resolve(Items);
+  }, 2000);
 });

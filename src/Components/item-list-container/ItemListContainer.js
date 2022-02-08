@@ -1,5 +1,5 @@
 import React from 'react';
-import {data} from '../Product/data';
+import {Items} from '../Product/Items';
 import Item from '../Product/Item';
 import {useEffect, useState} from 'react'
 import { productsAPI } from "../helpers/promises";
@@ -43,9 +43,10 @@ const ItemListContainer = () => {
       <div>
         <h1>Product you clicked</h1>
         <p>{selectedItem ? selectedItem.name : "Click to see a product here"}</p>
-
+        <p>{selectedItem ? selectedItem.price : "Ninguno"}</p>
+        <p>{selectedItem ? selectedItem.id : "Ninguno"}</p>
       </div>
-      {data.map(({ id, name, price, stock, image}) => (
+      {Items.map(({ id, name, price, stock, image}) => (
         <Item key={id} id={id} name={name} price={price} stock={stock} image={image} setSelectedItem={setSelectedItem}/>
         ))}
       </div>
