@@ -1,10 +1,12 @@
-import React from "react";
-import ProductCount from "./ProductCount";
+import React, {useState} from "react";
+import ItemCount from "./ItemCount";
 
 
+const Item = ({ alt, name, price, stock, image}) =>  {
 
+  const [selectedItem, setSelectedItem] = useState(null);
+  const selectItem = () => setSelectedItem({ alt, name, price, stock, image})
 
-const ProductCard = ({ alt, name, price, stock, image}) =>  {
     return (
       <div className="product">
         <p className="item-list product-title">{name}</p>
@@ -14,10 +16,11 @@ const ProductCard = ({ alt, name, price, stock, image}) =>  {
         <div className="product-details">
         <p className="item-list price">Price: ${price}</p>
         <p className="item-list stock">Stock: {stock}</p>
-        <ProductCount stock={stock} initial={1} />
+        <ItemCount stock={stock} initial={1} />
+        <button onClick={selectItem}>View Product</button>
         </div>
       </div>
       )
     };
 
-export default ProductCard;
+export default Item;

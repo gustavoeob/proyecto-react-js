@@ -1,6 +1,7 @@
 import './App.css';
 import ResponsiveAppBar from './Components/Navbar/Navbar';
-import ContainerProductList from './Components/container-product-list/ContainerProductList'
+// import ItemListContainer from './Components/item-list-container/ItemListContainer'
+import ItemDetailContainer from './Components/item-list-container/ItemDetailContainer';
 
 
 const App = () => {
@@ -10,7 +11,8 @@ const App = () => {
     <div id="App">
       <ResponsiveAppBar />
       <hr />
-      <ContainerProductList className='ContainerProductList' />
+      {/* <ItemListContainer className='ContainerProductList' /> */}
+      <ItemDetailContainer/>
     </div>
   );
 }

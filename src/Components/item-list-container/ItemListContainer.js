@@ -1,16 +1,17 @@
 import React from 'react';
 import {data} from '../Product/data';
-import ProductCard from '../Product/ProductCard';
+import Item from '../Product/Item';
 import {useEffect, useState} from 'react'
 import { productsAPI } from "../helpers/promises";
 
 
 
 
-const ContainerProductList = () => {
+const ItemListContainer = () => {
   
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   useEffect(() => {
     getProducts();
@@ -34,15 +35,21 @@ const ContainerProductList = () => {
     </div>;
   }
   return(
+
     <div>
       <h1 className="app-title">Whoopie.co</h1>
       <p className="landingTitle">The products you love are here!</p>
       <div className="itemContainer">  
+      <div>
+        <h1>Product you clicked</h1>
+        <p>{selectedItem ? selectedItem.name : "Click to see a product here"}</p>
+
+      </div>
       {data.map(({ id, name, price, stock, image}) => (
-        <ProductCard key={id} name={name} price={price} stock={stock} image={image} />
+        <Item key={id} id={id} name={name} price={price} stock={stock} image={image} setSelectedItem={setSelectedItem}/>
         ))}
       </div>
     </div>
   );
 };
-export default ContainerProductList;
+export default ItemListContainer;
