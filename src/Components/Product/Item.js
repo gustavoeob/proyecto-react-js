@@ -19,7 +19,7 @@ const Item = ({ id, name, image, alt, description, stock, price, setSelectedItem
         <p className="item-list price">Price: {price}</p>
         <p className="item-list stock">Stock: {stock}</p>
         <ItemCount stock={stock} setStockSelected={setStockSelected} initial={1}/>
-        <button onClick={selectItem}>Seleccionar producto</button>
+        <button className="selectItemBtn" onClick={selectItem}>Seleccionar producto</button>
       </div>
       
     </>
