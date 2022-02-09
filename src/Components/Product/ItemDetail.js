@@ -3,10 +3,10 @@ import { useState } from 'react';
 import {ItemCount} from "./ItemCount";
 
 const Item = ({ id, name, image, description, alt, stock, price, setSelectedItem }) => {
-  const [StockSelected, setStockSelected] = useState(0);
+  const [stockSelected, setStockSelected] = useState(0);
 
   const selectItem = () =>
-    setSelectedItem({ id, name, image, description, alt, stock, price, setSelectedItem: StockSelected });
+    setSelectedItem({ id, name, image, description, alt, stock, price, setSelectedItem: stockSelected });
 
   return (
     <>

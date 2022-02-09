@@ -10,6 +10,7 @@ const ItemDetailContainer = () => {
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [selectedItem, setSelectedItem] = useState(null);
+    const [stockSelected, setStockSelected] = useState(0);
   
     useEffect(() => {
       getProducts();
@@ -32,9 +33,13 @@ const ItemDetailContainer = () => {
         <p>Loading...</p>
       </div>;
     }
+    // if (ItemCount == (selectedItem.stock == "0")) {
+    //   return null;
+    // }
+
     return(
   
-      <div>
+      <div className="selectedItemDetailContainer">
         <h1 className="app-title">Whoopie.co</h1>
         <p className="landingTitle">The products you love are here!</p>
         <div className="itemContainer">  
@@ -47,9 +52,11 @@ const ItemDetailContainer = () => {
             <p className="selectedItemDetail selectedPriceDetail">{selectedItem ? selectedItem.price : ""}</p>
             <p className="selectedItemDetail selectedIdDetail">{selectedItem ? selectedItem.id : ""}</p>
             <p className="selectedItemDetail selectedImageDetail">{selectedItem ? selectedItem.description : ""}</p>
-        <itemCount />
+            <ItemCount className="product-count-detail" stock={selectedItem ? selectedItem.stock : ""} setStockSelected={setStockSelected} initial={1} />
+          <button className="selectItemBtn">Add to bag</button>
             
           </div>
+
           <div className="Extra"></div>
         </div>
         {Items.map(({ id, name, price, stock, image, description }) => (

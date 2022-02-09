@@ -163,7 +163,7 @@
     color: #a7a7a7;
 }
 
-.selectedItem, .selectedItemDetail{
+.selectedItem, .selectedItemDetail, .product-count{
     margin: 1.4em 5em;
 
 }
