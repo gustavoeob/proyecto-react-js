@@ -44,6 +44,7 @@ const ItemListContainer = () => {
         <p className="selectedItem selectedPrice">{selectedItem ? selectedItem.price : ""}</p>
         <p className="selectedItem selectedId">{selectedItem ? selectedItem.id : "Go to our catalog and select a product to be displayed here"}</p>
         <p className="selectedItem selectedImage">{selectedItem ? selectedItem.image : ""}</p>
+        <itemCount />
       </div>
       {Items.map(({ id, name, price, stock, image}) => (
         <Item key={id} id={`ID: ${id}`} name={name} price={`$${price}`} stock={stock} image={image} setSelectedItem={setSelectedItem} />

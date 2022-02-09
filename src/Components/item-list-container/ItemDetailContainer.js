@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react';
 import { productsAPI } from '../helpers/promises';
 import { Items } from '../Product/Items';
 import Item from '../Product/Item'
+import ItemCount from '../Product/ItemCount';
 
 
 const ItemDetailContainer = () => {
@@ -46,6 +47,7 @@ const ItemDetailContainer = () => {
             <p className="selectedItemDetail selectedPriceDetail">{selectedItem ? selectedItem.price : ""}</p>
             <p className="selectedItemDetail selectedIdDetail">{selectedItem ? selectedItem.id : ""}</p>
             <p className="selectedItemDetail selectedImageDetail">{selectedItem ? selectedItem.description : ""}</p>
+        <itemCount />
             
           </div>
           <div className="Extra"></div>
