@@ -61,29 +61,48 @@
 }
 
 .product-title{
-    font-size: 1.2em;
-    margin: 1em auto;
+    color: #a7a7a7 !important;
+    display: flex;
+    font-size: 1.5em;
+    margin: 1em 1.2em;
+    justify-content: flex-start;
     font-weight: 700;
     text-align: center;
 }
 
 .item-list{
-    color: mediumpurple;
+    color: #a7a7a7;
     font-weight: 600;
+    display: flex;
+    margin: 0 auto;
     
 }
 .product-count{
     text-align: center;
 }
 .decrease, .increase{
+    color: #a7a7a7;
+    border-radius: 40%;
+    border: 0px solid transparent;
     margin: 10.5px 3px;
     padding: 1.5px 6px;
+    cursor: pointer;
+    transition: all .15s ease;
 }
+
+.decrease:active, .increase:active{
+    background-color: #616060;
+    transition: all .15s ease;
+    color: white;
+}
+
 .counter{
+    color: #a7a7a7;
+    font-size: .8em;
     padding: 0 8px;
 }
 .stock{
-    margin: 10px;
+    margin: auto;
     font-size: .9em;
 }
 .product-image-container{
@@ -95,7 +114,6 @@
 .product-image{
     width:280px;
     height: 200px;
-    box-shadow: 0px 0px 4px rgb(138, 138, 138);
     border-radius: 5px;
     transition: 0.5s ease all;
 }
@@ -120,4 +138,63 @@
     margin: 40vh;
     font-size:2em;
     color: mediumpurple;
+}
+
+.selectedItemContainer, .selectedItemContainerDetail{
+    min-width: 650px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 0 90%;
+    flex-direction: column;
+}
+.selectedItemContainerDetail{
+    
+    display: flex;
+    flex-direction: row;
+    margin: 2em;
+}
+.DetailRightSideContainer{
+    width: 100vw;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    color: #a7a7a7;
+}
+
+.selectedItem, .selectedItemDetail{
+    margin: 1.4em 5em;
+
+}
+.selectedNameDetail{
+    font-size: 1.5em;
+    margin: 2em 3.5em;
+    margin-left: 80px;
+}
+.selectedItemDetail{
+    justify-content: flex-end;
+}
+.product-image-detail{
+    width: 120%;
+    height: 120%;;
+}
+
+.selectItemBtn{
+    border: none;
+    width: 200px;
+    height: 2em;
+    border-radius: 1em;
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    transition: all .15s ease;
+}
+.selectItemBtn:active{
+    background: #616060;
+    color: white;
+}
+.Extra{
+    width: 20%;
 }
