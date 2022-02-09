@@ -6,46 +6,56 @@ import Item from '../Product/Item'
 
 
 const ItemDetailContainer = () => {
-    const [selectedItem, setSelectedItem] = useState(null);
     const [products, setProducts] = useState([]);
-
+    const [loading, setLoading] = useState(true);
+    const [selectedItem, setSelectedItem] = useState(null);
+  
     useEffect(() => {
-        getProducts();
+      getProducts();
     }, []);
-
-    const getProducts  = async () => {
-        try{
-            const result = await productsAPI;
-            setProducts(result)
-        } catch (error) {
-            console.log(error);
-        }finally {
-            console.log('productsAPI called finished successfully');
-        }
+  
+    const getProducts = async () => {
+      try {
+        const result = await productsAPI;
+        setProducts(result);
+      } catch (error) {
+        console.log({ error });
+      } finally {
+        setLoading(false);
+        console.log("App ended loading");
+      }
+    };
+  
+    if (loading) {
+      return <div className="loading-prompt">
+        <p>Loading...</p>
+      </div>;
     }
     return(
-    <div>
-        <h1>Lista de productos</h1>
-        <h3>Producto seleccionado</h3>
-            selectedItem && selectedItem.image 
-                <img src={selectedItem.image} alt="selectedItemImage" />
-        <p>{selectedItem && selectedItem.name}</p>
-        <p>{selectedItem && selectedItem.description}</p>
-        <p>ID: {selectedItem && selectedItem.id}</p>
-        <p>Stock seleccionado: {selectedItem && selectedItem.stock}</p>
-        <hr />
-            {Items.map(({ id, name, image }) => (
-                <Item
-                key={id}
-                id={id}
-                name={name}
-                description={`${name} con id: ${id}`}
-                image={image}
-                setSelectedItem={setSelectedItem}
-                />
-            ))}
+  
+      <div>
+        <h1 className="app-title">Whoopie.co</h1>
+        <p className="landingTitle">The products you love are here!</p>
+        <div className="itemContainer">  
+        <div className="selectedItemContainerDetail">
+          <div className="DetailLeftSideContainer">  
+          <p className="selectedItemDetail selectedNameDetail">{selectedItem ? selectedItem.name : ""}</p>
+          <p className="selectedItemDetail selectedImageDetail">{selectedItem ? selectedItem.image : ""}</p>
+          </div>
+          <div className="DetailRightSideContainer">
+            <p className="selectedItemDetail selectedPriceDetail">{selectedItem ? selectedItem.price : ""}</p>
+            <p className="selectedItemDetail selectedIdDetail">{selectedItem ? selectedItem.id : ""}</p>
+            <p className="selectedItemDetail selectedImageDetail">{selectedItem ? selectedItem.description : ""}</p>
+            
+          </div>
+          <div className="Extra"></div>
         </div>
+        {Items.map(({ id, name, price, stock, image, description }) => (
+          <Item key={id} id={`ID: ${id}`} name={name} price={`Price: $${price}`} stock={stock} image={image} setSelectedItem={setSelectedItem} description={description}/>
+          ))}
+        </div>
+      </div>
     );
-};
+  };
 
 export default ItemDetailContainer;

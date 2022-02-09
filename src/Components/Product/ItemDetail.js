@@ -2,33 +2,28 @@ import React from 'react';
 import { useState } from 'react';
 import {ItemCount} from "./ItemCount";
 
-const ItemDetail = ({ id, image, name, description, stock: setStockSelected }) => {
-    const Item = ({
-        id,
-        name,
-        description,
-        image,
-        stock,
-        setSelectedItem,
-      }) => {
-    
-        const [stockSelected, setStockSelected] = useState(stock);
-        const selectItem = () => setSelectedItem({ id, image, name, description, stock: setStockSelected });
-    
-        
+const Item = ({ id, name, image, description, alt, stock, price, setSelectedItem }) => {
+  const [StockSelected, setStockSelected] = useState(0);
+
+  const selectItem = () =>
+    setSelectedItem({ id, name, image, description, alt, stock, price, setSelectedItem: StockSelected });
+
+  return (
+    <>
+      <div className="product">
+        <p className="item-list product-title">{name}</p>
+        <p className="product-description">{description}</p>
+        <div className="product-image-container">
+          <div className="product-image-detail">{image}</div> 
+        </div>
+        <p className="item-list price">{price}</p>
+        <p className="item-list stock">Stock: {stock}</p>
+        <ItemCount stock={stock} setStockSelected={setStockSelected} initial={1}/>
+        <button className="selectItemBtn" onClick={selectItem}>See Details</button>
+      </div>
       
+    </>
+  );
+};
     
-        return (
-            <div>
-                <h2>Nombre del producto: {name}</h2>
-                <h2>Descripción del producto: {description}</h2>
-                <img src={image} alt="image of product" />
-                <ItemCount stock={stock} setStockSelected={setStockSelected} />
-                <button onClick={selectItem}>Seleccionar producto</button>
-                <button onClick={ItemDetail}></button>
-            </div>
-        );
-    };
-}
-    
-    export default ItemDetail
+    export default ItemDetail;
