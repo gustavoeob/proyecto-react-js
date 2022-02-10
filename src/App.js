@@ -1,19 +1,11 @@
 import './App.css';
-import ResponsiveAppBar from './Components/Navbar/Navbar';
-// import ItemListContainer from './Components/item-list-container/ItemListContainer'
-import ItemDetailContainer from './Components/item-list-container/ItemDetailContainer';
-
+import Routes from './Components/routes/Routes'
 
 const App = () => {
 
 
   return ( 
-    <div id="App">
-      <ResponsiveAppBar />
-      <hr />
-      {/* <ItemListContainer className='ContainerProductList' /> */}
-      <ItemDetailContainer />
-    </div>
+      <Routes/>
   );
 }
 
