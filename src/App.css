@@ -198,3 +198,9 @@
 .Extra{
     width: 20%;
 }
+.not-found{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 40vh;
+}

@@ -1,21 +1,25 @@
 import React from 'react'
-import ResponsiveAppBar from '../Navbar/Navbar';
+import Navbar from '../Navbar/Navbar';
 import ItemListContainer from '../item-list-container/ItemListContainer';
 import ItemDetailContainer from '../item-list-container/ItemDetailContainer';
+import Err404 from '../Product/Err404'
 
 import { BrowserRouter, Route, Routes as Switch } from 'react-router-dom';
 
 const Routes = () => {
   return (
+  <>
     <BrowserRouter>
-        <ResponsiveAppBar/>
+        <Navbar/>
         <Switch>
             <Route exact path="/" element={<ItemListContainer/>}/>
             <Route path="/category/:id" element={<ItemListContainer/>}/>
             <Route path="/item/:id" element={<ItemDetailContainer/>}/>
-            <Route path="*" element={"<h2> 404 Page not found! </h2>"}/>
+            <Route path="*" element={<Err404/>}/>
         </Switch>
     </BrowserRouter>
+  </>
+
   )
 }
 
