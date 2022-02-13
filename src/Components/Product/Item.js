@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import ItemCount from "./ItemCount";
-
+import {Link} from "react-router-dom";
 
 const Item = ({ id, name, image, alt, description, stock, price, setSelectedItem }) => {
   const [StockSelected, setStockSelected] = useState(0);
@@ -19,7 +19,7 @@ const Item = ({ id, name, image, alt, description, stock, price, setSelectedItem
         <p className="item-list price">Price: {price}</p>
         <p className="item-list stock">Stock: {stock}</p>
         <ItemCount stock={stock} setStockSelected={setStockSelected} initial={1}/>
-        <button className="selectItemBtn" onClick={selectItem}>See Detail</button>
+        <Link to='`/detail/${id}`' className="selectItemBtn" onClick={selectItem}>See Detail</Link>
       </div>
       
     </>

@@ -1,8 +1,10 @@
 import React from 'react';
+import { useParams } from 'react-router-dom'
 import {Items} from '../Product/Items';
 import Item from '../Product/Item';
 import {useEffect, useState} from 'react'
 import { productsAPI } from "../helpers/promises";
+import Loading from "../Product/loading.gif";
 
 
 
@@ -11,11 +13,12 @@ const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedItem, setSelectedItem] = useState(null);
-
+  
+  
   useEffect(() => {
     getProducts();
   }, []);
-
+  
   const getProducts = async () => {
     try {
       const result = await productsAPI;
@@ -30,9 +33,11 @@ const ItemListContainer = () => {
 
   if (loading) {
     return <div className="loading-prompt">
-      <p>Loading...</p>
+      <img className="loading" src={Loading} alt=""/>
     </div>;
   }
+
+
   return(
 
     <div>
@@ -42,7 +47,7 @@ const ItemListContainer = () => {
       <div className="selectedItemContainer">
         <p className="selectedItem selectedName">{selectedItem ? selectedItem.name : ""}</p>
         <p className="selectedItem selectedPrice">{selectedItem ? selectedItem.price : ""}</p>
-        <p className="selectedItem selectedId">{selectedItem ? selectedItem.id : "Go to our catalog and select a product to be displayed here"}</p>
+        <p className="selectedItem selectedId">{selectedItem ? selectedItem.id : ""}</p>
         <p className="selectedItem selectedImage">{selectedItem ? selectedItem.image : ""}</p>
         <itemCount />
       </div>
