@@ -33,9 +33,7 @@ const ItemDetailContainer = () => {
         <p>Loading...</p>
       </div>;
     }
-    // if (ItemCount == (selectedItem.stock == "0")) {
-    //   return null;
-    // }
+    
 
     return(
   

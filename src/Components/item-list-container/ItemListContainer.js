@@ -40,7 +40,7 @@ const ItemListContainer = () => {
 
   return(
 
-    <div>
+    <div className="landing-page">
       <h1 className="app-title">Whoopie.co</h1>
       <p className="landingTitle">The products you love are here!</p>
       <div className="itemContainer">  
@@ -49,11 +49,11 @@ const ItemListContainer = () => {
         <p className="selectedItem selectedPrice">{selectedItem ? selectedItem.price : ""}</p>
         <p className="selectedItem selectedId">{selectedItem ? selectedItem.id : ""}</p>
         <p className="selectedItem selectedImage">{selectedItem ? selectedItem.image : ""}</p>
-        <itemCount />
       </div>
       {Items.map(({ id, name, price, stock, image}) => (
         <Item key={id} id={`ID: ${id}`} name={name} price={`$${price}`} stock={stock} image={image} setSelectedItem={setSelectedItem} />
         ))}
+        
       </div>
     </div>
   );
