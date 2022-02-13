@@ -1,7 +1,7 @@
 import React from 'react';
 import {useEffect, useState} from 'react';
 import { productsAPI } from '../helpers/promises';
-import { Items } from '../Product/Items';
+import { items } from '../Product/Items';
 import Item from '../Product/Item'
 import ItemCount from '../Product/ItemCount';
 
@@ -57,7 +57,7 @@ const ItemDetailContainer = () => {
 
           <div className="Extra"></div>
         </div>
-        {Items.map(({ id, name, price, stock, image, description }) => (
+        {items.map(({ id, name, price, stock, image, description }) => (
           <Item key={id} id={`ID: ${id}`} name={name} price={`Price: $${price}`} stock={stock} image={image} setSelectedItem={setSelectedItem} description={description}/>
           ))}
         </div>

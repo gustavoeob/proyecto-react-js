@@ -19,7 +19,7 @@ const Item = ({ id, name, image, alt, description, stock, price, setSelectedItem
         <p className="item-list price">Price: {price}</p>
         <p className="item-list stock">Stock: {stock}</p>
         <ItemCount stock={stock} setStockSelected={setStockSelected} initial={1}/>
-        <Link to='`/detail/${Item.id}`}`' className="selectItemBtn" onClick={selectItem}>See Detail</Link>
+        <Link to={`/detail/${id}`} className="selectItemBtn" onClick={selectItem}>See Detail</Link>
       </div>
       
     </>

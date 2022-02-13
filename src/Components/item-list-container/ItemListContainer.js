@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom'
-import {Items} from '../Product/Items';
+import {items} from '../Product/Items';
 import Item from '../Product/Item';
 import {useEffect, useState} from 'react'
 import { productsAPI } from "../helpers/promises";
@@ -9,7 +9,7 @@ import Loading from "../Product/loading.gif";
 
 
 const ItemListContainer = () => {
-  
+  const { id } = useParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedItem, setSelectedItem] = useState(null);
@@ -50,7 +50,7 @@ const ItemListContainer = () => {
         <p className="selectedItem selectedId">{selectedItem ? selectedItem.id : ""}</p>
         <p className="selectedItem selectedImage">{selectedItem ? selectedItem.image : ""}</p>
       </div>
-      {Items.map(({ id, name, price, stock, image}) => (
+      {items.map(({ id, name, price, stock, image}) => (
         <Item key={id} id={`ID: ${id}`} name={name} price={`$${price}`} stock={stock} image={image} setSelectedItem={setSelectedItem} />
         ))}
         
