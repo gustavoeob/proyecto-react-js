@@ -1,6 +1,5 @@
 import React from 'react';
 import { useParams } from 'react-router-dom'
-import {items} from '../Product/Items';
 import Item from '../Product/Item';
 import {useEffect, useState} from 'react'
 import { productsAPI } from "../helpers/promises";
@@ -9,20 +8,27 @@ import Loading from "../Product/loading.gif";
 
 
 const ItemListContainer = () => {
-  const { id } = useParams();
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [selectedItem, setSelectedItem] = useState(null);
+  const { id } = useParams();
   
   
   useEffect(() => {
     getProducts();
   }, []);
   
+  console.log(id)
   const getProducts = async () => {
     try {
       const result = await productsAPI;
-      setProducts(result);
+
+      if (id) {
+        setProducts(result.filter(i => i.category === id));
+      }else{
+        setProducts(result)
+      }
+
     } catch (error) {
       console.log({ error });
     } finally {
@@ -30,6 +36,7 @@ const ItemListContainer = () => {
       console.log("App ended loading");
     }
   };
+
 
   if (loading) {
     return <div className="loading-prompt">
@@ -50,8 +57,8 @@ const ItemListContainer = () => {
         <p className="selectedItem selectedId">{selectedItem ? selectedItem.id : ""}</p>
         <p className="selectedItem selectedImage">{selectedItem ? selectedItem.image : ""}</p>
       </div>
-      {items.map(({ id, name, price, stock, image}) => (
-        <Item key={id} id={`ID: ${id}`} name={name} price={`$${price}`} stock={stock} image={image} setSelectedItem={setSelectedItem} />
+      {products.map(({ id, name, price, stock, image}) => (
+        <Item key={id} id={`${id}`} name={name} price={`$${price}`} stock={stock} image={image} setSelectedItem={setSelectedItem} />
         ))}
         
       </div>

@@ -6,9 +6,9 @@ const Item = ({ id, name, image, alt, description, stock, price, setSelectedItem
   const [StockSelected, setStockSelected] = useState(0);
 
   const selectItem = () =>
-  // shows the selectedItem's description but it isn't returned in item section individually
     setSelectedItem({ id, name, image, alt, description, stock, price, setSelectedItem: StockSelected });
 
+    
   return (
     <>
       <div className="product">
@@ -18,8 +18,8 @@ const Item = ({ id, name, image, alt, description, stock, price, setSelectedItem
         </div>
         <p className="item-list price">Price: {price}</p>
         <p className="item-list stock">Stock: {stock}</p>
-        <ItemCount stock={stock} setStockSelected={setStockSelected} initial={1}/>
-        <Link to={`/detail/${id}`} className="selectItemBtn" onClick={selectItem}>See Detail</Link>
+        <ItemCount className="product-count-landing" stock={stock} setStockSelected={setStockSelected} initial={1}/>
+        <div className="see-details-btn"> <Link to={`/item/${ id }`} className="selectItemBtn" onClick={selectItem}>See Detail</Link></div>
       </div>
       
     </>
