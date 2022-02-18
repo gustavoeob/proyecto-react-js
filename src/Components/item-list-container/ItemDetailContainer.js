@@ -34,13 +34,10 @@ const ItemDetailContainer = () => {
       return <img className="loading-prompt" src={Loading} alt=""/>
   }
     
-
     return(
   
       <div className="item-detail-container">
-        
         <ItemDetail key={products.id} id={`${products.id}`} name={products.name} price={`Price: $${products.price}`} stock={products.stock} image={products.image}  description={products.description}/>
-          
       </div>
     );
   };

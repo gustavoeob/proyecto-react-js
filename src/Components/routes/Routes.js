@@ -3,6 +3,7 @@ import Appbar from '../Navbar/Appbar';
 import ItemListContainer from '../item-list-container/ItemListContainer';
 import ItemDetailContainer from '../item-list-container/ItemDetailContainer';
 import Err404 from '../Product/Err404'
+import Cart from '../Navbar/Cart'
 
 import { BrowserRouter, Route, Routes as Switch } from 'react-router-dom';
 
@@ -15,6 +16,7 @@ const Routes = () => {
             <Route exact path="/" element={<ItemListContainer/>}/>
             <Route path="/category/:id" element={<ItemListContainer/>}/>
             <Route path="/item/:id" element={<ItemDetailContainer/>}/>
+            <Route path="/cart" element={<Cart/>}/>
             <Route path="*" element={<Err404/>}/>
         </Switch>
     </BrowserRouter>

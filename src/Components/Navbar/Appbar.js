@@ -2,6 +2,8 @@ import React from 'react'
 import { Container, Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import whoopie from './Img/whoopie.png'
 import CartIcon  from './CartIcon'
+import {NavLink} from 'react-router-dom'
+
 
 const Appbar = () => {
   return (
@@ -23,7 +25,9 @@ const Appbar = () => {
         </NavDropdown>
       </Nav>
     </Navbar.Collapse>
-    <CartIcon />
+     <NavLink to='/cart'>
+      <CartIcon/>
+     </NavLink>
   </Container>
 </Navbar>
   </>

@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-
+import Cart from '../Navbar/Cart'
+import {Link} from 'react-router-dom'
 
 const ItemCount = ({ stock, initial, onAdd }) => {
     const [counter, setCounter] = useState(initial);
@@ -13,14 +14,19 @@ const ItemCount = ({ stock, initial, onAdd }) => {
         setCounter(counter + 1)
     }
 
-
+    const a = () => {
+        console.log("clicked")
+    }
   return (
     <>
         <div>
             <button className="decrease"onClick={decrease}>-</button>
             <span className="counter">{counter}</span>
-            <button className="increase" onClick={increase}>+</button>
+            <button  className="increase" onClick={increase}>+</button>
         </div>
+        <Link to='/cart'>
+            <button className="selectItemBtn add-to-bag-btn">Add to bag</button>
+        </Link>
     </>
   );
 };

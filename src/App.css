@@ -15,8 +15,15 @@
     background-color: mediumpurple !important;
     position: fixed !important;
     top: 0;
+    z-index: 100;
 }
 
+#basic-navbar-nav{
+    margin: 1em 0;
+}
+#root > nav > div > button{
+    border: none;
+}
 #Appbar-item {
     color: white !important;
 }
@@ -135,6 +142,7 @@
 
 .item-buttons{
     display: flex;
+    align-items: center;
 }
 .add-to-bag-btn{
     margin: auto 2em;
@@ -143,11 +151,11 @@
     margin: 1em auto;
 }
 .decrease, .increase{
-    color: #a7a7a7;
+    color: #3a3333;
     border-radius: 40%;
     border: 0px solid transparent;
     margin: 10.5px 3px;
-    padding: 1.5px 6px;
+    padding: .1px 7px;
     cursor: pointer;
     transition: all .15s ease;
 }
@@ -159,7 +167,7 @@
 }
 
 .counter{
-    color: #a7a7a7;
+    color: #2b2727;
     font-size: .8em;
     padding: 0 8px;
 }
@@ -245,7 +253,7 @@
 .selectItemBtn{
     text-decoration: none;
     background: #eeeeee;
-    color: #a7a7a7;
+    color: #333333;
     border: none;
     width: 200px;
     height: 2em;
@@ -315,4 +323,12 @@
     color: #6e46be;
     border: 2px solid #6e46be;
 
+}
+
+.cart-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 45vh auto;
+    font-size: 2.5em;
 }
