@@ -142,10 +142,16 @@
 
 .item-buttons{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+    justify-content: center;
 }
+.counter-container{
+    display: flex;
+}
+
 .add-to-bag-btn{
-    margin: auto 2em;
+    margin: 1em 2em;
 }
 .see-details-btn{
     margin: 1em auto;
@@ -167,6 +173,8 @@
 }
 
 .counter{
+    display: flex;
+    align-items: center;
     color: #2b2727;
     font-size: .8em;
     padding: 0 8px;
