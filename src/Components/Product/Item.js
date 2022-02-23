@@ -2,6 +2,7 @@ import React, {useState} from "react";
 import ItemCount from "./ItemCount";
 import {Link} from "react-router-dom";
 
+
 const Item = ({ id, name, image, alt, description, stock, price, setSelectedItem }) => {
   const [StockSelected, setStockSelected] = useState(0);
 

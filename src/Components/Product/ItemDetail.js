@@ -1,4 +1,4 @@
-import React, { useState, useContext} from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import ItemCount from "./ItemCount";
 import {Link} from 'react-router-dom';
 import { CartContext } from '../Context/CartContext'
@@ -8,9 +8,7 @@ const ItemDetail = ({ id, name, image, description, alt, stock, price }) => {
   const [selectedItem, setSelectedItem] = useState(null);
   const { addItem } = useContext(CartContext); 
 
-  const selectItem = () =>
-    setSelectedItem({ id, name, image, description, alt, stock, price, setSelectedItem: stockSelected });
-
+  useEffect (() => setSelectedItem({ id, name, image, description, alt, stockSelected, price}),[])
  
     const onAdd = (counter) => {
       addItem({

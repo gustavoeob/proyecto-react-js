@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react';
 const ItemCount = ({ stock, setStockSelected, initial, onAdd }) => {
     const [counter, setCounter] = useState(initial);
 
-
     useEffect(() => {
         setStockSelected(counter);
       }, [counter]);
@@ -17,9 +16,8 @@ const ItemCount = ({ stock, setStockSelected, initial, onAdd }) => {
         if (counter >= stock) return;
         setCounter(counter + 1)
     }
-
     const a = () => {
-        console.log("clicked")
+      console.log(counter)
     }
   return (
     <>
@@ -28,7 +26,7 @@ const ItemCount = ({ stock, setStockSelected, initial, onAdd }) => {
             <span className="counter">{counter}</span>
             <button  className="increase" onClick={increase}>+</button>
         </div>
-            <button onClick={() =>{onAdd(counter)}} className="selectItemBtn add-to-bag-btn">Add to bag</button>
+            <button onClick={()=> {onAdd(counter)}} className="selectItemBtn add-to-bag-btn">Add to bag</button>
     </>
   );
 };
