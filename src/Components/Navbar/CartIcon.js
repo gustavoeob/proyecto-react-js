@@ -6,6 +6,7 @@ const CartIcon = () => {
   return (
     <> 
       <img className="shopping-bag-icon" src={Bag} alt=""/>
+      
     </>
     
   )

@@ -1,10 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;1,300;1,400&display=swap'); 
+
 *{
     margin: 0;
     padding: 0;
     font-family: 'Mulish', sans-serif;
     font-weight: 700;
+    
 }
 #App{
     max-width: 100%;
@@ -366,5 +369,62 @@
 .cart-item-right{
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-end;
+    flex-direction: column;
+}
+.remove-cart-item{
+    margin: 0 2em;
+    border: none;
+    background: transparent;
+}
+
+.first-header-container{
+    margin-top: 80px;
+    width: 100%;
+    display: flex;
+}
+.first-header-video{
+    top: 80px;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+    justify-content: center;
+    object-fit: cover;
+    overflow: hidden;
+    margin-left: -20px;
+}
+
+.first-header-text{
+    color: linen;
+    margin:  auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2em;
+    font-weight: 700;
+    text-shadow: .2px .2px .5px rgb(124, 123, 123);
+}
+
+.front-first-header{
+    color: white;
+    width: 100%;
+    position: relative;
+    text-align: center;
+    margin: 30vh auto;
+}
+.header-link{
+    text-decoration: none;
+    color: mediumpurple;
+    font-size: 1.5em;
+    padding: 2em;
+}
+
+.header-link:hover{
+    color: white
+}
+
+.first-header-text-secondary{
+    font-style: italic;
+}
+.first-header-text-third{
+    font-weight: 500;
 }

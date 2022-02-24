@@ -4,7 +4,7 @@ import Item from '../Product/Item';
 import {useEffect, useState} from 'react'
 import { productsAPI } from "../helpers/promises";
 import Loading from "../Product/loading.gif";
-
+import FirstHeader from "../Section/FirstHeader"
 
 
 const ItemListContainer = () => {
@@ -48,9 +48,8 @@ const ItemListContainer = () => {
   return(
 
     <div className="landing-page">
-      <h1 className="app-title">Whoopie.co</h1>
-      <p className="landingTitle">The products you love are here!</p>
-      <div className="itemContainer">  
+      <div className="itemContainer"> 
+      <FirstHeader/> 
       <div className="selectedItemContainer">
         <p className="selectedItem selectedName">{selectedItem ? selectedItem.name : ""}</p>
         <p className="selectedItem selectedPrice">{selectedItem ? selectedItem.price : ""}</p>
