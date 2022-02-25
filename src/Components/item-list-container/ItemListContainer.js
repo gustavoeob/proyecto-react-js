@@ -15,6 +15,8 @@ const ItemListContainer = () => {
   
   
   useEffect(() => {
+
+    
     getProducts();
   }, []);
   
@@ -50,6 +52,7 @@ const ItemListContainer = () => {
     <div className="landing-page">
       <div className="itemContainer"> 
       <FirstHeader/> 
+      <p className="landing-text">Products</p>
       <div className="selectedItemContainer">
         <p className="selectedItem selectedName">{selectedItem ? selectedItem.name : ""}</p>
         <p className="selectedItem selectedPrice">{selectedItem ? selectedItem.price : ""}</p>
