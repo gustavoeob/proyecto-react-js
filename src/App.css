@@ -370,7 +370,7 @@
     width: 70%;
     min-height: 200px;
     display: flex;
-    margin: 8em auto;
+    margin: 5em auto;
     color: #a7a7a7;
     box-shadow: 0.1px 0.1px 6px #cecece;
     border-radius: 5px;
@@ -384,18 +384,42 @@
 }
 .cart-item-title{
     font-size: 1.5em;
-    font-weight: 600;   
+    font-weight: 600;  
+    color: #000; 
 }
-
+.cart-item-left{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
 .cart-item-right{
     display: flex;
-    justify-content: center;
-    align-items: start;
+    justify-content: space-between;
+    flex-direction: column;
+
 }
+.cart-item-right-up-side {
+    display: flex;
+}
+.cart-item-right-down-side{
+    display: flex;
+    justify-content: right;
+}
+.cart-item-quantity {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.2em;
+}
+.cart-item-price, .cart-item-subtotal{
+    font-size: 1.2em;
+}
+
+
 .remove-cart-item{
     margin: 0 2em;
     border: none;
     background: transparent;
+    place-self: flex-start;
 }
 
 .first-header-container{
@@ -456,14 +480,39 @@
 }
 .cart-action-btn{
     width: 70%;
+    display: flex;
+    justify-content: space-between;
     margin: 6.5em auto;
-    margin-bottom: 0em;
+    margin-bottom: 2.5em;
 }
 
-.remove-all-cart-items{
-    padding: 0.2em 2em;
+.remove-all-cart-items:hover{
+    background-color: #8a8a8a;
+    color: #fff;
+}
+.remove-all-cart-items, .total-price-cart{
+    padding: 0em 2em;
     border: none;
     border-radius: 50px;
+    margin-bottom: -1rem;
+}
+.pay-now-container{
+    display: flex;
+}
+.pay-now-btn{
+    margin-right: 2em;
+    padding: 0 2em;
+    border: none;
+    border-radius: 50px;
+
+}
+.pay-now{
+    margin-bottom: 0rem;
+    padding: .3em 0;
+}
+.total-price-cart{
+    color: mediumpurple;
+    font-size: 1.4em;
 }
 .empty-cart-container{
     width: 70%;
@@ -475,11 +524,30 @@
 
 .cart-empty-msg{
     font-size:2.5em;
-    margin: .5e auto;
+    margin: .8em auto;
     justify-content: center;
 }
 
 .remove-icon{
     width: 1.2em;
     margin: 1.2em -.5em;
+    display: flex;
+    align-items: flex-end;
+}
+.cart-title{
+    margin-top: 4.5em;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.total-amount{
+    font-weight: bolder;
+}
+
+.pay-now-container{
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: flex-end
 }

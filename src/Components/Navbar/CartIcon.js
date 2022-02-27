@@ -16,7 +16,7 @@ const CartIcon = () => {
       <Link className="cart-widget-container" to={"/cart"}>
         <img className="shopping-bag-icon" src={Bag} alt=""/>
         <div className="cart-items-qty-widget">
-          <span className="cart-items-qty-widget">{Number(cartData.reduce((acc, el) => acc + el.quantity, 0))}</span>
+          <span className="cart-items-qty-widget">{(cartData.reduce((acc, el) => acc + el.quantity, 0))}</span>
         </div>
       </Link>
       
