@@ -27,11 +27,11 @@ const ItemDetail = ({ id, name, image, description, alt, stock, price }) => {
           </div> 
           <div className="item-right-container">
             <p className="item-list item-description">{description}</p>
-            <p className="item-list item-price">{price}</p>
+            <p className="item-list item-price">Price: ${price}</p>
             <p className="item-list item-stock">Stock: {stock}</p>
             <div className="item-buttons"> 
               <ItemCount className="product-count" stock={stock} setStockSelected={setStockSelected} initial={1} onAdd={onAdd}/>
-              <Link to={'/cart'} className="selectItemBtn add-to-bag-btn">Checkout</Link>
+              <Link to={'/cart'} className="selectItemBtn add-to-bag-btn">Go to bag</Link>
             </div>
             
           </div>

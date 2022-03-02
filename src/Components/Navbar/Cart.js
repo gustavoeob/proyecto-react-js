@@ -26,7 +26,7 @@ const Cart = () => {
                   <div className="cart-item-left">
                     <p className="cart-item cart-item-title">{item.name}</p>
                     <p className="cart-item cart-item-image">{item.image}</p>
-                    <p className="cart-item cart-item-price">{item.price}</p>
+                    <p className="cart-item cart-item-price">Price: ${item.price}</p>
                   </div>
                   <div className="cart-item-right">
                     <div className="cart-item-right-up-side"> 
@@ -58,9 +58,9 @@ const Cart = () => {
             <p className="total-price-cart">Total: $<span className="total-amount">{(totalCart())}</span></p>
           </div>
           <div className="pay-now-container">
-            <button className="pay-now-btn">
-              <p className="pay-now">Pay now</p>
-            </button>
+            <Link to='/checkout' className="pay-now-btn">
+              <p className="pay-now">Proceed to Checkout</p>
+            </Link>
           </div>
         </>
       )}
