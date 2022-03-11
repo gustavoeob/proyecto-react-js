@@ -5,7 +5,6 @@ import {useEffect, useState} from 'react'
 import { productsAPI } from "../helpers/promises";
 import Loading from "../Product/loading.gif";
 import FirstHeader from "../Section/FirstHeader"
-import cartData from '../Context/CartContext'
 
 
 const ItemListContainer = () => {
@@ -21,7 +20,7 @@ const ItemListContainer = () => {
     getProducts();
   }, []);
   
-  console.log(cartData)
+  console.log(id)
   const getProducts = async () => {
     try {
       const result = await productsAPI;

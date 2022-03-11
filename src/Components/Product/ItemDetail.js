@@ -2,8 +2,11 @@ import React, { useState, useContext, useEffect } from 'react';
 import ItemCount from "./ItemCount";
 import {Link} from 'react-router-dom';
 import { CartContext } from '../Context/CartContext'
+import useProducts from '../hooks/useProducts'
 
 const ItemDetail = ({ id, name, image, description, alt, stock, price }) => {
+  const { loading, products } = useProducts();
+
   const [stockSelected, setStockSelected] = useState(0);
   const [selectedItem, setSelectedItem] = useState(null);
   const { addItem } = useContext(CartContext); 
@@ -20,7 +23,7 @@ const ItemDetail = ({ id, name, image, description, alt, stock, price }) => {
 
   return (
     <>
-      <div className="item-detail">
+      { !loading ? <div className="item-detail">
           <div className="item-left-container">
             <p className="item-list item-title">{name}</p> 
             <div className="item-list item-image">{image}</div>
@@ -36,7 +39,7 @@ const ItemDetail = ({ id, name, image, description, alt, stock, price }) => {
             
           </div>
         
-      </div>
+      </div> : console.log("item")}
       
     </>
   );

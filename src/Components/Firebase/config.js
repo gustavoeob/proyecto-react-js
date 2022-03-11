@@ -1,11 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'bootstrap/dist/css/bootstrap.css'
-import './index.css';
-import App from './App';
-import getFirestore from 'firebase/firestore'
+
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import getFirestore from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyBteQQpbu_oTO-iHxk8afjWB-xZEi3sa8E",
@@ -17,13 +13,5 @@ const firebaseConfig = {
   measurementId: "G-2XK60DG0TM"
 };
 
-// Initialize Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-ReactDOM.render(
-  <React.StrictMode>
-      <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
-
+export const db = getFirestore(app)
